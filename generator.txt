@@ -1,0 +1,15 @@
+[
+  '{{repeat(100)}}',
+  {
+    "id": '{{index()}}',
+    "nome": '{{firstName()}} {{surname()}}',
+    "cpf": '{{integer(10000000000, 99999999999)}}',
+    "ultima_compra": '{{date(new Date(2014, 0, 1), new Date(), "dd-MM-YYYY")}}',
+    "email": '{{email()}}',
+    "telefone1": '{{phone("(xx) xxxxx-xxxx")}}',
+    "telefone2": '{{phone("(xx) xxxxx-xxxx")}}',
+    "telefone3": '{{phone("(xx) xxxxx-xxxx")}}',
+    "telefone4": '{{phone("(xx) xxxxx-xxxx")}}',
+    "endereco_id": '{{integer(1, 50)}}'
+  }
+]
