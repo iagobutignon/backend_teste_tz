@@ -1,15 +1,58 @@
+Clientes
 [
-  '{{repeat(100)}}',
+  '{{repeat(500)}}',
   {
     "id": '{{index()}}',
     "nome": '{{firstName()}} {{surname()}}',
     "cpf": '{{integer(10000000000, 99999999999)}}',
-    "ultima_compra": '{{date(new Date(2014, 0, 1), new Date(), "dd-MM-YYYY")}}',
-    "email": '{{email()}}',
-    "telefone1": '{{phone("(xx) xxxxx-xxxx")}}',
-    "telefone2": '{{phone("(xx) xxxxx-xxxx")}}',
-    "telefone3": '{{phone("(xx) xxxxx-xxxx")}}',
-    "telefone4": '{{phone("(xx) xxxxx-xxxx")}}',
-    "endereco_id": '{{integer(1, 50)}}'
+    "ultima_compra": '{{date(new Date(2014, 0, 1), new Date(), "dd/MM/YYYY")}}',
+  }
+]
+
+Produtos
+[
+  '{{repeat(2000)}}',
+  {
+    "id": '{{index()}}',
+    "codigo_barras": '{{integer(10000000000, 99999999999)}}',
+    "ultima_venda": '{{date(new Date(2014, 0, 1), new Date(), "dd/MM/YYYY")}}',
+    "descricao": '{{lorem(random(1, 2, 3, 4, 5, 6, 7, 8), "words")}}',
+    "grupo": '{{lorem(random(1, 2, 3), "words")}}',
+    "sub_grupo": '{{lorem(random(1, 2, 3), "words")}}',
+    "valor": '{{floating(1, 200, 2, "$0,0.00")}}',
+    "estoque": '{{integer(0, 1000)}}'
+  }
+]
+
+Endereços
+[
+  '{{repeat(800)}}',
+  {
+    "id_cliente": '{{integer(0, 500)}}',
+    "logradouro": '{{street()}}',
+    "numero": '{{integer(0, 1000)}}',
+    "bairro": '{{state()}}',
+    "cidade": '{{city()}}',
+    "uf": '{{random("AC","AL","AM","AP","BA","CE","DF","ES","GO","MA","MG","MS","MT","PA","PB","PE","PI","PR","RJ","RN","RO","RR","RS","SC","SE","SP","TO")}}'
+  }
+]
+
+Emails
+[
+  '{{repeat(1200)}}',  
+  {
+    "id_cliente": '{{integer(0, 500)}}',
+    "email": '{{email()}}'
+  }
+]
+
+Telefones
+[
+  '{{repeat(1800)}}',  
+  {
+    "id_cliente": '{{integer(0, 500)}}',
+    "numero": '{{phone("(xx) xxxxx-xxxx")}}',
+    "whatsapp": '{{bool()}}',
+    "telegram": '{{bool()}}'
   }
 ]
